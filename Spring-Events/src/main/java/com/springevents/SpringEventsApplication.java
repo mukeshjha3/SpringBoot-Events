@@ -14,9 +14,11 @@ public class SpringEventsApplication {
 
 }/*
 	
-                      @Async has two limitations (package : import org.springframework.scheduling.annotation.EnableAsync;)
+               @Async has two limitations (package : import org.springframework.scheduling.annotation.EnableAsync;)
+         ---------------------------------------------------------------------------------------------------------------------------
 1 -> It must be applied to public methods only.
 2 -> Self-invocation — calling the async method from within the same class — won’t work.
+
 	
 By default, event listeners are synchronous in Spring Boot. 
 The publishEvent method blocks until all listeners have finished processing the event.

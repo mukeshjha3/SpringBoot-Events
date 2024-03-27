@@ -11,11 +11,10 @@ import lombok.NoArgsConstructor;
 public class SmsEventListener {
 
 	@EventListener
-//	@Order(2)
 	@Async
 	public void sendSms(NotificationEvents event) throws InterruptedException {
-		System.out.println("Sending the SMS to " + event.getUsername());
-		Thread.sleep(5000);
+		System.out.println("Sending the SMS to ");
+		System.out.println(Thread.currentThread().getName());
 		System.out.println("SMS sended..");
 	}
 }

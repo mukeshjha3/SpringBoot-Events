@@ -11,10 +11,10 @@ import lombok.NoArgsConstructor;
 public class WhatsappEventListener {
 
 	@EventListener()
-//	@Order(3)
 	@Async
 	public void sendWhatsapp(NotificationEvents event) {
-		System.out.println("Sending the whatsapp message to : " +event.getUsername() );
+		System.out.println("Sending the whatsapp message") ;
+		System.out.println(Thread.currentThread().getName());
 		System.out.println("Whatsapp SMS sent...");
 	}
 }

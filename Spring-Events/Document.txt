@@ -1,0 +1,16 @@
+In a Spring Boot application,when you use the"@EnableAsync annotation at the main class level and annotate a method with @Async", Spring
+ Boot automatically creates a"ThreadPoolTaskExecutor bean to manage the asynchronous execution of methods annotated with '@Async".
+
+ 
+ The default thread pool configuration in Spring Boot depends on various factors, including the available resources of your environment 
+ and any custom configurations you might have provided. If you haven't explicitly defined a"TaskExecutor bean in your application
+ configuration, Spring Boot will create a default one for you
+  
+  
+ By default, Spring Boot creates a'SimpleAsyncTaskExecutor, which is a simple implementation that doesn't use a fixed thread pool,
+ Instead, it creates a new thread for each task.However,this may not be suitable for production use, especially if you expect a high
+ volume of concurrent tasks, as creating a new thread for each task can lead to resource exhaustion
+ 
+ 
+ To control the number of threads in the thread pool, you can define a "ThreadPoolTaskExecutor bean in your application configuration
+ and customize its properties, such as the core pool size, max pool size, queue capacity, etc.
